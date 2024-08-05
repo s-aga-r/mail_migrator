@@ -6,6 +6,23 @@ from frappe.desk.doctype.notification_log.notification_log import (
 )
 
 
+def set_email_account(doc, method=None):
+	settings = frappe.get_cached_doc("Migrator Settings")
+
+	if not settings.enabled:
+		return
+
+	if doc.communication:
+		doc.email_account = settings.transactional_email_account
+	elif doc.reference_doctype and doc.reference_name:
+		if doc.reference_doctype == "Newsletter":
+			doc.email_account = settings.newsletter_email_account
+		else:
+			doc.email_account = settings.notification_email_account
+	else:
+		doc.email_account = settings.notification_email_account
+
+
 def notify_user(doc, method=None):
 	"""Notify user when a reply is received on a linked document."""
 

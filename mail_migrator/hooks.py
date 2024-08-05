@@ -123,9 +123,12 @@ app_license = "mit"
 # Hook on document methods and events
 
 doc_events = {
+	"Email Queue": {
+		"before_insert": "mail_migrator.override.set_email_account",
+	},
 	"Communication": {
 		"after_insert": "mail_migrator.override.notify_user",
-	}
+	},
 }
 
 # Scheduled Tasks
