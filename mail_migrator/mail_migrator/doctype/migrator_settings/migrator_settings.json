@@ -6,35 +6,12 @@
  "engine": "InnoDB",
  "field_order": [
   "enabled",
-  "transactional_email_section",
-  "transactional_display_name",
-  "column_break_eorp",
+  "section_break_kyws",
   "transactional_email_account",
-  "notification_email_section",
-  "notification_display_name",
-  "column_break_uyud",
   "notification_email_account",
-  "newsletter_emails_section",
-  "newsletter_display_name",
-  "column_break_54lc",
   "newsletter_email_account"
  ],
  "fields": [
-  {
-   "fieldname": "transactional_email_section",
-   "fieldtype": "Section Break",
-   "label": "Transactional Email"
-  },
-  {
-   "fieldname": "notification_email_section",
-   "fieldtype": "Section Break",
-   "label": "Notification Email"
-  },
-  {
-   "fieldname": "newsletter_emails_section",
-   "fieldtype": "Section Break",
-   "label": "Newsletter Emails"
-  },
   {
    "default": "0",
    "fieldname": "enabled",
@@ -42,55 +19,32 @@
    "label": "Enabled"
   },
   {
-   "fieldname": "transactional_display_name",
-   "fieldtype": "Data",
-   "label": "Display Name"
-  },
-  {
-   "fieldname": "notification_display_name",
-   "fieldtype": "Data",
-   "label": "Display Name"
-  },
-  {
-   "fieldname": "newsletter_display_name",
-   "fieldtype": "Data",
-   "label": "Display Name"
-  },
-  {
-   "fieldname": "column_break_eorp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "transactional_email_account",
    "fieldtype": "Link",
-   "label": "Email Account",
+   "label": "Transactional Email Account",
    "options": "Email Account"
-  },
-  {
-   "fieldname": "column_break_uyud",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "notification_email_account",
    "fieldtype": "Link",
-   "label": "Email Account",
+   "label": "Notification Email Account",
    "options": "Email Account"
-  },
-  {
-   "fieldname": "column_break_54lc",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "newsletter_email_account",
    "fieldtype": "Link",
-   "label": "Email Account",
+   "label": "Newsletter Email Account",
    "options": "Email Account"
+  },
+  {
+   "fieldname": "section_break_kyws",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-08-05 19:24:26.503484",
+ "modified": "2024-08-05 21:41:12.064760",
  "modified_by": "Administrator",
  "module": "Mail Migrator",
  "name": "Migrator Settings",
