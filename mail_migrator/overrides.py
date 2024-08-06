@@ -69,6 +69,9 @@ def set_email_account(doc, method=None):
 def notify_user(doc, method=None):
 	"""Notify user when a reply is received on a linked document."""
 
+	if not frappe.db.get_single_value("Migrator Settings", "enabled", cache=True):
+		return
+
 	if (
 		doc.in_reply_to
 		and doc.status == "Linked"
