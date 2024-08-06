@@ -55,15 +55,19 @@ def set_email_account(doc, method=None):
 	if not settings.enabled:
 		return
 
-	if doc.communication:
-		doc.email_account = settings.transactional_email_account
-	elif doc.reference_doctype and doc.reference_name:
+	if doc.reference_doctype and doc.reference_name:
 		if doc.reference_doctype == "Newsletter":
 			doc.email_account = settings.newsletter_email_account
-		else:
-			doc.email_account = settings.notification_email_account
+		else:  # Doc Emails
+			doc.email_account = settings.transactional_email_account
+	elif doc.communication:  # Direct Communication
+		doc.email_account = settings.transactional_email_account
 	else:
-		doc.email_account = settings.notification_email_account
+		# No fast* way to identify between Comment and Welcome/Password Reset Email
+		if "New Reply" in doc.message or "mentioned you in a comment" in doc.message:
+			doc.email_account = settings.notification_email_account
+		else:  # Welcome/Password Reset Email
+			doc.email_account = settings.transactional_email_account
 
 
 def notify_user(doc, method=None):
