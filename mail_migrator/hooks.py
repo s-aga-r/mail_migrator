@@ -114,9 +114,7 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {"Email Account": "mail_migrator.overrides.CustomEmailAccount"}
 
 # Document Events
 # ---------------
@@ -124,10 +122,10 @@ app_license = "mit"
 
 doc_events = {
 	"Email Queue": {
-		"before_insert": "mail_migrator.override.set_email_account",
+		"before_insert": "mail_migrator.overrides.set_email_account",
 	},
 	"Communication": {
-		"after_insert": "mail_migrator.override.notify_user",
+		"after_insert": "mail_migrator.overrides.notify_user",
 	},
 }
 
