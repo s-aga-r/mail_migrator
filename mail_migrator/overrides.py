@@ -13,7 +13,7 @@ class CustomEmailAccount(EmailAccount):
 		"""Called by scheduler to receive emails from this EMail account using POP3/IMAP."""
 
 		if (self.service != "Frappe Mail") or (
-			not frappe.db.get_single_value("Migrator Settings", "enabled", cache=True)
+			not frappe.db.get_single_value("Migrator Settings", "send_reply_notification", cache=True)
 		):
 			super().receive()
 

@@ -6,10 +6,12 @@
  "engine": "InnoDB",
  "field_order": [
   "enabled",
-  "section_break_kyws",
+  "column_break_wh2s",
   "transactional_email_account",
   "notification_email_account",
-  "newsletter_email_account"
+  "newsletter_email_account",
+  "section_break_ybrb",
+  "send_reply_notification"
  ],
  "fields": [
   {
@@ -37,14 +39,24 @@
    "options": "Email Account"
   },
   {
-   "fieldname": "section_break_kyws",
+   "default": "1",
+   "fieldname": "send_reply_notification",
+   "fieldtype": "Check",
+   "label": "Send Reply Notification"
+  },
+  {
+   "fieldname": "section_break_ybrb",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wh2s",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-08-05 21:41:12.064760",
+ "modified": "2024-08-21 10:20:35.574356",
  "modified_by": "Administrator",
  "module": "Mail Migrator",
  "name": "Migrator Settings",
